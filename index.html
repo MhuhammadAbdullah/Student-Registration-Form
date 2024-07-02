@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+    <blockquote>
+    <fieldset style="width: 600px;">
+        <h1><img src="Image/Navy White University Elegant Logo.png" alt="Logo Image" height="150" width="150"
+                align="middle" />Student Registration Form</h1>
+        <br>
+        <form action="submit_form" method="post">
+            <legend>
+                <label for="FirstName">First
+                    Name:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="text" id="FirstName" name="FirstName" placeholder="Enter your first name" height="5"
+                    required><br><br>
+
+                    <label for="lastName">Last
+                    Name:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" height="5"
+                    required><br><br>
+
+                <label for="dateOfBirth">Date of
+                    Birth:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="date" id="dateOfBirth" name="dateOfBirth" height="5" width="100" required><br><br>
+
+                <label for="email">Email
+                    ID:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="email" id="email" name="email" placeholder="Enter your email" height="5" required><br><br>
+
+                <label for="mobileNumber">Mobile
+                    Number:</label>&nbsp;&nbsp;&nbsp;&nbsp;<!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="number" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number"
+                    height="5" required><br><br>
+
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label><br><br>
+
+                <label for="address"
+                    align="middle">Address:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <textarea id="address" name="address" placeholder="Enter your address"
+                    align="middle"></textarea><br><br>
+
+                <label
+                    for="city">City:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="text" id="city" name="city" placeholder="Enter your city" height="5" required><br><br>
+
+                <label for="pinCode">Pin
+                    Code:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="number" id="pinCode" name="pinCode" placeholder="Enter your pin code" height="5"
+                    required><br><br>
+
+                <label
+                    for="state">State:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="text" id="state" name="state" placeholder="Enter your state" height="5" required><br><br>
+
+                <label
+                    for="country">Country:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--This is (&nbsp;) used for spacing purpose.-->
+                <input type="text" id="country" name="country" placeholder="Enter Your Counter" height="5"
+                    required><br><br>
+
+                <label for="hobbies">Hobbies:</label>
+                <input type="checkbox" id="drawing" name="hobbies" value="Drawing">
+                <label for="drawing">Drawing</label>
+                <input type="checkbox" id="singing" name="hobbies" value="Singing">
+                <label for="singing">Singing</label>
+                <input type="checkbox" id="dancing" name="hobbies" value="Dancing">
+                <label for="dancing">Dancing</label>
+                <input type="checkbox" id="sketching" name="hobbies" value="Sketching">
+                <label for="sketching">Sketching</label>
+                <input type="checkbox" id="others" name="hobbies" value="Others">
+                <label for="others">Others</label><br>
+
+                <h2>Qualification</h2>
+                <table border="1">
+                    <tr>
+                        <th>SI.No.</th>
+                        <th>Examination</th>
+                        <th>Board</th>
+                        <th>Percentage</th>
+                        <th>Year of Passing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Class X</td>
+                        <td><input type="text" name="classXBoard" placeholder="Board"></td>
+                        <td><input type="number" name="classXPercentage" placeholder="Percentage"></td>
+                        <td><input type="number" name="classXYear" placeholder="Year"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Class XII</td>
+                        <td><input type="text" name="classXIIBoard" placeholder="Board"></td>
+                        <td><input type="number" name="classXIIPercentage" placeholder="Percentage"></td>
+                        <td><input type="number" name="classXIIYear" placeholder="Year"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Graduation</td>
+                        <td><input type="text" name="graduationBoard" placeholder="Board"></td>
+                        <td><input type="number" name="graduationPercentage" placeholder="Percentage"></td>
+                        <td><input type="number" name="graduationYear" placeholder="Year"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Masters</td>
+                        <td><input type="text" name="mastersBoard" placeholder="Board"></td>
+                        <td><input type="number" name="mastersPercentage" placeholder="Percentage"></td>
+                        <td><input type="number" name="mastersYear" placeholder="Year"></td>
+                    </tr>
+                </table><br>
+
+                <label for="courses">Courses Applied For:</label>
+                <input type="checkbox" id="bca" name="courses" value="BCA">
+                <label for="bca">BCA</label>
+                <input type="checkbox" id="bcom" name="courses" value="B.Com">
+                <label for="bcom">B.Com</label>
+                <input type="checkbox" id="bsc" name="courses" value="B.Sc">
+                <label for="bsc">B.Sc</label>
+                <input type="checkbox" id="ba" name="courses" value="B.A">
+                <label for="ba">B.A</label><br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+        </form>
+        </legend>
+    </fieldset>
+    </blockquote>
+</body>
+
+</html>
