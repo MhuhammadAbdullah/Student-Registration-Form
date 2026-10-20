@@ -1,155 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <title>Student Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e7f1f2">
+  <title>Before You Say “Qubool Hai” — Registration</title>
+  <style>
+    :root{font-family:Arial,Helvetica,sans-serif;color:#202124;background:#e7f1f2;font-synthesis:none}
+    *{box-sizing:border-box}
+    body{margin:0;padding:28px 16px 44px}
+    .form-shell{width:min(100%,720px);margin:0 auto}
+    .banner{height:170px;border-radius:8px;margin-bottom:12px;overflow:hidden;position:relative;background:linear-gradient(115deg,#051d2b,#102e46 55%,#633d31);display:grid;place-items:center;color:white;text-align:center;box-shadow:0 1px 3px #0002}
+    .banner:before,.banner:after{content:"";position:absolute;border:1px solid #11cbd0;border-radius:50%;width:440px;height:180px;transform:rotate(-12deg);opacity:.6}
+    .banner:after{width:520px;height:120px;transform:rotate(12deg);opacity:.35}
+    .banner-title{position:relative;z-index:1;font-weight:800;letter-spacing:-2px;font-size:clamp(34px,7vw,58px);line-height:.92;text-shadow:0 2px 9px #0008}
+    .banner-title span{display:block;color:#12d5d2;font-size:.68em;letter-spacing:1px;margin-top:8px}
+    .card{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:12px 0;box-shadow:0 1px 2px #0000000a}
+    .intro{border-top:9px solid #16777d;padding:22px 26px 18px}
+    h1{font-size:28px;font-weight:400;margin:0 0 12px;line-height:1.25}
+    .description{font-size:14px;line-height:1.5;margin:0 0 18px}
+    .event-info{font-size:14px;line-height:1.65;font-weight:600}
+    .event-info div{margin:1px 0}
+    .speaker{font-size:14px;line-height:1.5;margin-top:17px}
+    .please{font-size:14px;margin:18px 0}
+    .account{font-size:14px;line-height:1.6;white-space:pre-line;margin-top:22px}
+    .account strong{display:block;margin-bottom:5px}
+    .account p{margin:0}
+    .account-strip{border-top:1px solid #dadce0;padding:13px 20px;font-size:13px;color:#5f6368;line-height:1.45}
+    .required-note{border-top:1px solid #dadce0;padding:13px 20px;color:#d93025;font-size:13px}
+    .question{padding:22px 24px 24px}
+    .question label.title{font-size:14px;display:block;margin-bottom:24px}
+    .star{color:#d93025}
+    input[type=text],input[type=tel],input[type=number],input[type=email]{font:14px Arial;border:0;border-bottom:1px solid #dadce0;border-radius:0;padding:9px 0;width:min(100%,360px);outline:none}
+    input:focus,textarea:focus{border-bottom:2px solid #16777d}
+    .answer::placeholder{color:#80868b}
+    .options{display:grid;gap:14px}
+    .option{display:flex;align-items:center;gap:12px;font-size:14px;min-height:20px}
+    input[type=radio]{width:18px;height:18px;margin:0;accent-color:#16777d}
+    .other-input{flex:1;min-width:70px}
+    .upload-hint{font-size:12px;color:#80868b;margin:-12px 0 14px}
+    input[type=file]{max-width:100%;font:13px Arial;color:#5f6368}
+    .actions{display:flex;align-items:center;justify-content:space-between;margin:12px 0}
+    button{background:#16777d;color:#fff;border:0;border-radius:4px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 1px 2px #0002}
+    button:hover{background:#11666b}
+    button:disabled{opacity:.6;cursor:wait}
+    .clear{background:transparent;color:#16777d;box-shadow:none;padding:10px 8px}
+    .clear:hover{background:#dcebed}
+    .fineprint{font-size:12px;color:#5f6368;line-height:1.5}
+    .brand{text-align:center;color:#747775;font-size:20px;font-weight:600;margin:20px 0 0}
+    .status{display:none;padding:14px 18px;margin:12px 0;border-radius:6px;font-size:14px;line-height:1.45}
+    .status.show{display:block}.status.ok{color:#137333;background:#e6f4ea}.status.err{color:#b3261e;background:#fce8e6}
+    @media(max-width:520px){body{padding:14px 10px 32px}.banner{height:135px}.intro{padding:19px 18px 15px}.question{padding:20px 18px 22px}h1{font-size:24px}.account-strip{padding:12px 16px}}
+  </style>
 </head>
-
 <body>
-    <blockquote>
-    <fieldset style="width: 600px;">
-        <h1><img src="Image/Navy White University Elegant Logo.png" alt="Logo Image" height="150" width="150"
-                align="middle" />Student Registration Form</h1>
-        <br>
-        <form action="submit_form" method="post">
-            <legend>
-                <label for="FirstName">First
-                    Name:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="text" id="FirstName" name="FirstName" placeholder="Enter your first name" height="5"
-                    required><br><br>
+  <main class="form-shell">
+    <header class="banner" aria-label="Before You Say Qubool Hai">
+      <div class="banner-title">BEFORE<br>YOU SAY<span>قُبُول ہے</span></div>
+    </header>
 
-                    <label for="lastName">Last
-                    Name:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" height="5"
-                    required><br><br>
+    <section class="card intro">
+      <h1>Before You Say <em>“Qubool Hai.”</em></h1>
+      <p class="description">A workshop designed to help you understand the essentials of building a healthy, meaningful and lasting marriage — before you say <em>“Qubool Hai.”</em></p>
+      <div class="event-info">
+        <div>🗓️ Sunday, 11th October 2026</div>
+        <div>🕒 11:00 AM – 3:00 PM</div>
+        <div>📍 Ribat – The Campus, Alamgir Road, Bahadurabad</div>
+        <div>🎟️ Registration Fee: Rs. 1,500/-</div>
+        <div>👥 Open for Males &amp; Females</div>
+      </div>
+      <div class="speaker"><strong>Speaker:</strong><br><strong>Ust. Ishaq Bin Sadiq</strong><br>President, Shajarah Institute</div>
+      <p class="please">Please fill out the form below to register.</p>
+      <div class="account"><strong>Account Details:</strong><p>Bank: Sadapay
+Name: Muhammad Miraaj Quraishi
+No: 03079933775</p></div>
+      <div class="account-strip">Your registration details and payment receipt will be saved securely to the event organizer’s Google Sheet.</div>
+      <div class="required-note"><span class="star">*</span> Indicates required question</div>
+    </section>
 
-                <label for="dateOfBirth">Date of
-                    Birth:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="date" id="dateOfBirth" name="dateOfBirth" height="5" width="100" required><br><br>
+    <form id="registrationForm">
+      <section class="card question">
+        <label class="title" for="name">Name: <span class="star">*</span></label>
+        <input class="answer" id="name" name="name" type="text" placeholder="Your answer" autocomplete="name" required>
+      </section>
+      <section class="card question">
+        <label class="title" for="contact">Contact Number: <span class="star">*</span></label>
+        <input class="answer" id="contact" name="contact" type="tel" placeholder="Your answer" autocomplete="tel" required>
+      </section>
+      <section class="card question">
+        <label class="title" for="institute">Institute <span class="star">*</span></label>
+        <input class="answer" id="institute" name="institute" type="text" placeholder="Your answer" required>
+      </section>
+      <section class="card question">
+        <label class="title" for="age">Age: <span class="star">*</span></label>
+        <input class="answer" id="age" name="age" type="number" min="16" max="100" placeholder="Your answer" required>
+      </section>
+      <section class="card question">
+        <span class="title">How did you get to know about this course? <span class="star">*</span></span>
+        <div class="options">
+          <label class="option"><input type="radio" name="referral" value="Facebook" required> Facebook</label>
+          <label class="option"><input type="radio" name="referral" value="WhatsApp"> Whatsapp</label>
+          <label class="option"><input type="radio" name="referral" value="Friend"> Friend</label>
+          <label class="option"><input type="radio" name="referral" value="Other"> Other: <input class="other-input" id="otherReferral" type="text" aria-label="Other referral source"></label>
+        </div>
+      </section>
+      <section class="card question">
+        <label class="title" for="receipt">Upload your Payment Receipt here:</label>
+        <p class="upload-hint">Upload 1 supported file. Max 10 MB.</p>
+        <input id="receipt" name="receipt" type="file" accept="image/*,.pdf">
+      </section>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div class="actions">
+        <button id="submitButton" type="submit">Submit</button>
+        <button class="clear" type="reset">Clear form</button>
+      </div>
+    </form>
+    <p class="fineprint">Never submit passwords through forms.</p>
+    <p class="fineprint" style="text-align:center">This registration form is managed by the event organizer.</p>
+    <div class="brand">Registration</div>
+  </main>
+  <script>
+    // After deploying Code.gs as a Web App, paste its URL here.
+    const GOOGLE_APPS_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+    const MAX_FILE_BYTES = 10 * 1024 * 1024;
+    const form = document.getElementById("registrationForm");
+    const statusBox = document.getElementById("status");
+    const submitButton = document.getElementById("submitButton");
+    const otherInput = document.getElementById("otherReferral");
 
-                <label for="email">Email
-                    ID:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="email" id="email" name="email" placeholder="Enter your email" height="5" required><br><br>
+    otherInput.addEventListener("input", () => {
+      if (otherInput.value.trim()) document.querySelector('input[name="referral"][value="Other"]').checked = true;
+    });
+    form.addEventListener("reset", () => {
+      statusBox.className = "status";
+      statusBox.textContent = "";
+    });
 
-                <label for="mobileNumber">Mobile
-                    Number:</label>&nbsp;&nbsp;&nbsp;&nbsp;<!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="number" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number"
-                    height="5" required><br><br>
+    function showStatus(message, type) {
+      statusBox.textContent = message;
+      statusBox.className = "status show " + type;
+      statusBox.scrollIntoView({behavior: "smooth", block: "center"});
+    }
 
-                <label for="gender">Gender:</label>
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label><br><br>
+    function fileAsDataUrl(file) {
+      return new Promise((resolve, reject) => {
+        if (!file) return resolve("");
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(new Error("Receipt file could not be read."));
+        reader.readAsDataURL(file);
+      });
+    }
 
-                <label for="address"
-                    align="middle">Address:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <textarea id="address" name="address" placeholder="Enter your address"
-                    align="middle"></textarea><br><br>
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (GOOGLE_APPS_SCRIPT_URL.includes("PASTE_YOUR")) {
+        showStatus("Form tayyar hai. Google Sheet saving shuru karne ke liye setup instructions ke mutabiq Apps Script URL add karein.", "err");
+        return;
+      }
+      const file = document.getElementById("receipt").files[0];
+      if (file && file.size > MAX_FILE_BYTES) {
+        showStatus("Receipt file 10 MB se chhoti honi chahiye.", "err");
+        return;
+      }
 
-                <label
-                    for="city">City:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="text" id="city" name="city" placeholder="Enter your city" height="5" required><br><br>
-
-                <label for="pinCode">Pin
-                    Code:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="number" id="pinCode" name="pinCode" placeholder="Enter your pin code" height="5"
-                    required><br><br>
-
-                <label
-                    for="state">State:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="text" id="state" name="state" placeholder="Enter your state" height="5" required><br><br>
-
-                <label
-                    for="country">Country:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <!--This is (&nbsp;) used for spacing purpose.-->
-                <input type="text" id="country" name="country" placeholder="Enter Your Counter" height="5"
-                    required><br><br>
-
-                <label for="hobbies">Hobbies:</label>
-                <input type="checkbox" id="drawing" name="hobbies" value="Drawing">
-                <label for="drawing">Drawing</label>
-                <input type="checkbox" id="singing" name="hobbies" value="Singing">
-                <label for="singing">Singing</label>
-                <input type="checkbox" id="dancing" name="hobbies" value="Dancing">
-                <label for="dancing">Dancing</label>
-                <input type="checkbox" id="sketching" name="hobbies" value="Sketching">
-                <label for="sketching">Sketching</label>
-                <input type="checkbox" id="others" name="hobbies" value="Others">
-                <label for="others">Others</label><br>
-
-                <h2>Qualification</h2>
-                <table border="1">
-                    <tr>
-                        <th>SI.No.</th>
-                        <th>Examination</th>
-                        <th>Board</th>
-                        <th>Percentage</th>
-                        <th>Year of Passing</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Class X</td>
-                        <td><input type="text" name="classXBoard" placeholder="Board"></td>
-                        <td><input type="number" name="classXPercentage" placeholder="Percentage"></td>
-                        <td><input type="number" name="classXYear" placeholder="Year"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Class XII</td>
-                        <td><input type="text" name="classXIIBoard" placeholder="Board"></td>
-                        <td><input type="number" name="classXIIPercentage" placeholder="Percentage"></td>
-                        <td><input type="number" name="classXIIYear" placeholder="Year"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Graduation</td>
-                        <td><input type="text" name="graduationBoard" placeholder="Board"></td>
-                        <td><input type="number" name="graduationPercentage" placeholder="Percentage"></td>
-                        <td><input type="number" name="graduationYear" placeholder="Year"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Masters</td>
-                        <td><input type="text" name="mastersBoard" placeholder="Board"></td>
-                        <td><input type="number" name="mastersPercentage" placeholder="Percentage"></td>
-                        <td><input type="number" name="mastersYear" placeholder="Year"></td>
-                    </tr>
-                </table><br>
-
-                <label for="courses">Courses Applied For:</label>
-                <input type="checkbox" id="bca" name="courses" value="BCA">
-                <label for="bca">BCA</label>
-                <input type="checkbox" id="bcom" name="courses" value="B.Com">
-                <label for="bcom">B.Com</label>
-                <input type="checkbox" id="bsc" name="courses" value="B.Sc">
-                <label for="bsc">B.Sc</label>
-                <input type="checkbox" id="ba" name="courses" value="B.A">
-                <label for="ba">B.A</label><br><br>
-
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
-        </form>
-        </legend>
-    </fieldset>
-    </blockquote>
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting…";
+      try {
+        const values = Object.fromEntries(new FormData(form).entries());
+        values.referral = form.querySelector('input[name="referral"]:checked')?.value || "";
+        if (values.referral === "Other") values.referral = otherInput.value.trim() || "Other";
+        const payload = {
+          name: values.name,
+          contact: values.contact,
+          institute: values.institute,
+          age: values.age,
+          referral: values.referral,
+          receiptName: file ? file.name : "",
+          receiptType: file ? file.type : "",
+          receiptData: await fileAsDataUrl(file),
+          submittedAt: new Date().toISOString()
+        };
+        // text/plain avoids a browser preflight; Apps Script receives the JSON in e.postData.contents.
+        const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+          method: "POST",
+          headers: {"Content-Type": "text/plain;charset=utf-8"},
+          body: JSON.stringify(payload),
+          redirect: "follow"
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.error || "Submission failed.");
+        form.reset();
+        showStatus("Thank you! Your registration has been submitted successfully.", "ok");
+      } catch (error) {
+        showStatus(error.message || "Submission failed. Please try again.", "err");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit";
+      }
+    });
+  </script>
 </body>
-
 </html>
