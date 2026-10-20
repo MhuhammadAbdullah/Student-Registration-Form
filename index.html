@@ -181,17 +181,16 @@ No: 03079933775</p></div>
           receiptData: await fileAsDataUrl(file),
           submittedAt: new Date().toISOString()
         };
-        // text/plain avoids a browser preflight; Apps Script receives the JSON in e.postData.contents.
-        const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        // Apps Script redirects cross-origin responses, so use no-cors for the simple POST.
+        // Apps Script receives this JSON in e.postData.contents; the opaque response cannot be inspected.
+        await fetch(GOOGLE_APPS_SCRIPT_URL, {
           method: "POST",
+          mode: "no-cors",
           headers: {"Content-Type": "text/plain;charset=utf-8"},
-          body: JSON.stringify(payload),
-          redirect: "follow"
+          body: JSON.stringify(payload)
         });
-        const result = await response.json();
-        if (!response.ok || !result.success) throw new Error(result.error || "Submission failed.");
         form.reset();
-        showStatus("Thank you! Your registration has been submitted successfully.", "ok");
+        showStatus("Thank you! Your registration request was sent. Please contact the organizer if you do not receive confirmation.", "ok");
       } catch (error) {
         showStatus(error.message || "Submission failed. Please try again.", "err");
       } finally {
